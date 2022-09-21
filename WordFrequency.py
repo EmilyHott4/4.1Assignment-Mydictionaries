@@ -9,7 +9,7 @@ display (Dict)
 #def word_count (textfile):
 Dict = {}
     #text = open(textFile, "r")
-lines - textFile.readlines()
+lines = textFile.readlines()
 for line in lines:
     Word + line.split()
     for word in Word: 
