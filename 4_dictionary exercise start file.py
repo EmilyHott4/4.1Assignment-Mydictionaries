@@ -1,15 +1,26 @@
 # This program uses a dictionary as a deck of cards.
-
+import random
 def main():
     # Create a deck of cards.
-   
-
+    #name of the function we are calling is called create deck
+    #it doesn't have any arguments so you don't need to supply any arguments
+    deck = create_deck() #will call the create deck function and what will be returened is a dictionary
+    #this becomes a dictionary
     # Get the number of cards to deal.
     num_cards = int(input('How many cards should I deal? '))
+    #an input(int) is a function that allows you to reciee input from the user
+    #it is a value returning function so you have to save it to some kind of variable
 
 
 
     # Deal the cards.
+    deal_cards(deck,num_cards)#deck is just an object not a specific thing
+    #with functions you have to recieve arguments then return something
+
+    #we are'nt saving the output to a variable cause we aren't returning anythign
+
+    #if you are returning something, you have to save it into some variable
+
 
 
     
@@ -45,6 +56,7 @@ def create_deck():
             'Queen of Diamonds':10, 'King of Diamonds': 10}
 
     # Return the deck.
+    return deck
 
 
 
@@ -54,26 +66,39 @@ def create_deck():
 
 def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
+    handValue = 0
 
     
     
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
+    if number > 52:
+        number = 52
+        #data validation to prevent data input being over the number of cards
 
     
     
 
     # Deal the cards and accumulate their values.
-    
+    #popitem method doesn't work
+    for count in range(number): #number is the number of cards the user enteres
+        card = random.choice(list(deck)) #make a list of the keys of the dictionary
+        value = deck[card]
+        handValue += value
+        print(card)
 
 
     
 
     # Display the value of the hand.
-
+    print ('The Value of the hand is',handValue)
     
     
 
 # Call the main function.
 main()
+#clone repository
+#create virtual environment
+#activate and install
+
