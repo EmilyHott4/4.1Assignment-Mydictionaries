@@ -48,12 +48,23 @@ datastore = { "medical":[
       ]
 }
 
-outfile = open('retail_space2.csv','w')
-outfile.write('room-number,use,sq-ft,price\n')
+# import CSV library
+import csv
 
-for i in datastore['medical']: #represents the 1st of the dictionaries and iterates through each of the dictionaries
-  #print(type(i)) just prints out five 'dict'
-  print(i['use']) #prints out use for each one
-  outfile.write(str(i['room-number'])+','+i['use']+','+str(i['sq-ft'])+','str(i['price']+'\n'))
-   #you get a type error cause some are intergers
-  #you would need to convert to strings
+# Create a new file to write info about real estate space for doctor's office
+retail_space = open("retail_space.csv", "w", newline="")
+
+# Create a writer to write into the retail_space file
+retail_space_writer = csv.writer(retail_space)
+
+# Write the Header Row of Retail-Space file
+# retail_space_writer.writerow(["Room-Number, Use, Sq-Ft, Price"])
+keys = datastore["medical"][0]
+retail_space_writer.writerow(keys)
+
+# Create a for loop to write into the CSV file, the information in the dictionary
+for d in range(len(datastore["medical"])):
+    # Write the Row of Retail-Space file
+    retail_space_writer.writerow(datastore["medical"][d].values())
+
+retail_space.close()
