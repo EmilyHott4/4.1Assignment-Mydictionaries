@@ -87,6 +87,7 @@ def deal_cards(deck, number):
         value = deck[card]
         handValue += value
         print(card)
+        print()
 
 
     
