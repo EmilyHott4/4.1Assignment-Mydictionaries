@@ -25,5 +25,4 @@ for i in person['pets']:
 #for i in person ['pets'].values():
     #print(i)
 
-#for i in a:
-    #a = [1,2,3] #i = 1
+
